@@ -9,10 +9,8 @@ export default function DashboardLayout({ children }) {
 
   return (
     <div className="flex h-screen bg-white overflow-hidden">
-      {/* Sidebar (hidden on small screens, displayed on large screens) */}
-      <aside className="hidden lg:block">
-        <Sidebar />
-      </aside>
+      {/* Single Sidebar (handles mobile/desktop internally) */}
+      <Sidebar />
 
       {/* Main content area */}
       <div className="flex flex-1 flex-col overflow-hidden">
@@ -21,9 +19,6 @@ export default function DashboardLayout({ children }) {
           {children}
         </main>
       </div>
-
-      {/* Sidebar rendered for mobile (fixed inside component itself) */}
-      <Sidebar />
     </div>
   );
 }
